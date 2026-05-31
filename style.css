@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    background: radial-gradient(circle, #fff0f3 0%, #ffccd5 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    perspective: 1200px; 
+}
+
+/* --- DESIGN ESTILO APP (CONTAINER 3D) --- */
+.cena-3d { width: 100%; max-width: 380px; height: 640px; z-index: 5; }
+
+.container-app {
+    width: 100%; height: 100%; background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(10px); border-radius: 32px;
+    box-shadow: 0 30px 50px rgba(255, 77, 109, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 4px solid rgba(255, 255, 255, 0.8); position: relative;
+    transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.container-app.girar-3d { transform: rotateY(360deg) scale(1.02); }
+.tela-painel { width: 100%; height: 100%; display: flex; flex-direction: column; backface-visibility: hidden; }
+
+.app-header { padding: 15px 20px; border-bottom: 1px solid #ffe5ec; font-size: 0.85rem; font-weight: 600; color: #ff758f; display: flex; align-items: center; gap: 8px; }
+.status-dot { width: 8px; height: 8px; background: #2ec4b6; border-radius: 50%; }
+
+.app-content { flex: 1; padding: 25px; display: flex; flex-direction: column; justify-content: center; }
+.app-content.scrollable { overflow-y: auto; justify-content: flex-start; }
+
+.escondido { display: none !important; }
+
+/* --- BOTÕES DO APP --- */
+.btn {
+    background: linear-gradient(135deg, #ff4d6d, #ff758f); color: white; border: none; padding: 15px; font-size: 1rem; font-weight: 600;
+    border-radius: 16px; cursor: pointer; width: 100%; box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 25px rgba(255, 77, 109, 0.4); }
+.btn:active { transform: translateY(1px); }
+
+.btn-opcao { background: #fff5f6; color: #4a4a4a; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid #ffe5ec; text-align: left; padding-left: 20px; }
+.btn-opcao:hover { background: #ffe5ec; color: #ff4d6d; transform: translateX(5px); }
+
+/* --- TEXTOS --- */
+h1 { color: #ff4d6d; font-size: 1.8rem; margin-bottom: 12px; }
+h2 { color: #333; font-size: 1.25rem; margin-bottom: 20px; }
+p { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px; }
+
+.opcoes-container { display: flex; flex-direction: column; gap: 12px; }
+.feedback-box { margin-top: 15px; padding: 15px; border-radius: 16px; background: #fff0f3; border: 1px solid #ffccd5; text-align: center; }
+.foto-casal { width: 100%; max-height: 160px; object-fit: cover; border-radius: 12px; margin: 12px 0; }
+.contador-container { background: #fff5f6; padding: 12px; border-radius: 16px; margin-bottom: 20px; border: 1px dashed #ff4d6d; text-align: center; }
+#contador { font-size: 1.1rem; font-weight: 700; color: #ff4d6d; }
+
+/* --- TEXTO DA CARTA COMPLETA --- */
+.carta-aberta-texto { text-align: left; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+.carta-aberta-texto p { margin-bottom: 15px; font-size: 0.9rem; color: #444; }
+
+/* --- DESIGN DO ENVELOPE INTERATIVO --- */
+.envelope-wrapper { perspective: 1000px; cursor: pointer; display: flex; justify-content: center; width: 200px; height: 140px; margin-bottom: 30px; }
+.envelope { position: relative; width: 100%; height: 100%; background: #ffccd5; border-radius: 0 0 12px 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transform-style: preserve-3d; transition: transform 0.3s; }
+.envelope:hover { transform: scale(1.05) translateY(-5px); }
+.aba { position: absolute; top: 0; left: 0; width: 0; height: 0; border-left: 100px solid transparent; border-right: 100px solid transparent; border-top: 75px solid #ff4d6d; border-radius: 4px; transform-origin: top; transition: transform 0.4s ease; z-index: 3; }
+.corpo-envelope { position: absolute; bottom: 0; left: 0; width: 0; height: 0; border-left: 100px solid #ffa4b6; border-right: 100px solid #ffa4b6; border-bottom: 75px solid #ffccd5; border-top: 65px solid transparent; border-radius: 0 0 12px 12px; z-index: 2; }
+.coracao-selo { position: absolute; top: 55px; left: 50%; transform: translateX(-50%); font-size: 1.8rem; z-index: 4; transition: all 0.3s ease; }
+
+/* Animação do envelope abrindo */
+.envelope-wrapper.aberto .aba { transform: rotateX(180deg); z-index: 1; }
+.envelope-wrapper.aberto .coracao-selo { opacity: 0; transform: translateX(-50%) scale(0.5); }
+
+/* --- PLAYER DE VÍDEO --- */
+.video-container { width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(255, 77, 109, 0.2); border: 2px solid white; margin: 20px 0; background: #000; }
+.video-container video { width: 100%; display: block; border-radius: 14px; }
+
+/* --- DEMAIS ELEMENTOS DE FUNDO --- */
+#btn-musica { position: absolute; top: 20px; right: 20px; background: white; border: 1px solid #ffccd5; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; color: #ff4d6d; z-index: 10; }
+.coracoes li { position: absolute; list-style: none; font-size: 1.5rem; bottom: -50px; animation: subir 15s linear infinite; opacity: 0; z-index: 1; pointer-events: none; }
+@keyframes subir { 0% { transform: translateY(0) rotate(0deg); opacity: 0; } 10% { opacity: 0.5; } 100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
+.fotos-retro-fundo { position: absolute; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+.foto-boomerang { position: absolute; background: white; padding: 8px 8px 20px 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border-radius: 4px; opacity: 0.25; width: 110px; height: 140px; overflow: hidden; }
+.foto-boomerang img { width: 100%; height: 100%; object-fit: cover; }
+.foto-esquerda { top: 10%; left: 5%; transform: rotate(-8deg); animation: b1 3s ease-in-out infinite alternate; }
+.foto-direita { bottom: 10%; right: 5%; transform: rotate(12deg); animation: b2 3s ease-in-out infinite alternate; }
+@keyframes b1 { 0% { transform: scale(1) rotate(-8deg); } 100% { transform: scale(1.05) rotate(-3deg); } }
+@keyframes b2 { 0% { transform: scale(1) rotate(12deg); } 100% { transform: scale(1.05) rotate(16deg); } }

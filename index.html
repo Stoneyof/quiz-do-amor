@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Quiz do Amor ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="musica-tema" src="assets/musica.mp3" loop></audio>
+    <button id="btn-musica" onclick="alternarMusica()">🎵 Ouvir Música</button>
+
+    <ul class="coracoes">
+        <li>❤️</li><li>❤️</li><li>❤️</li><li>❤️</li><li>❤️</li><li>❤️</li>
+    </ul>
+
+    <div class="fotos-retro-fundo">
+        <div class="foto-boomerang foto-esquerda"><img src="assets/foto1.jpg" alt="Momento 1"></div>
+        <div class="foto-boomerang foto-direita"><img src="assets/foto2.jpg" alt="Momento 2"></div>
+    </div>
+
+    <div class="cena-3d">
+        <div class="container-app" id="app-card">
+            
+            <div id="tela-inicial" class="tela-painel">
+                <div class="app-header">
+                    <span class="status-dot"></span> App do Amor
+                </div>
+                <div class="app-content">
+                    <h1>Bem-vinda! 🥰</h1>
+                    <p>Preparei uma surpresa especial. Será que você lembra tudo sobre a nossa história? Vamos descobrir!</p>
+                    <button class="btn" onclick="iniciarQuiz()">Começar o Jogo 🚀</button>
+                </div>
+            </div>
+
+            <div id="tela-quiz" class="tela-painel escondido">
+                <div class="app-header">
+                    <span id="progresso" class="progresso">Pergunta 1 de 5</span>
+                </div>
+                <div class="app-content">
+                    <h2 id="pergunta-texto">Texto da Pergunta?</h2>
+                    <div class="opcoes-container" id="opcoes-container"></div>
+                    
+                    <div id="feedback-container" class="feedback-box escondido">
+                        <p id="feedback-texto"></p>
+                        <img id="feedback-foto" src="" alt="Nossa Foto" class="foto-casal escondido">
+                        <button class="btn" id="btn-proxima" onclick="proximaPergunta()">Avançar ➡️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tela-envelope" class="tela-painel escondido">
+                <div class="app-header"><span>📩 Você recebeu uma mensagem</span></div>
+                <div class="app-content" style="justify-content: center; align-items: center;">
+                    <p style="margin-bottom: 10px; font-weight: 600; color: #ff4d6d;">Você completou o quiz! 🎉</p>
+                    <p style="font-size: 0.85rem; margin-bottom: 30px;">Toque no envelope para abrir sua surpresa:</p>
+                    
+                    <div class="envelope-wrapper" onclick="abrirCarta()">
+                        <div class="envelope">
+                            <div class="aba"></div>
+                            <div class="corpo-envelope"></div>
+                            <div class="coracao-selo">❤️</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tela-final" class="tela-painel escondido">
+                <div class="app-header"><span>🌹 Minha Carta Para Você</span></div>
+                <div class="app-content scrollable">
+                    
+                    <div class="contador-container">
+                        <h3>Nosso Tempo Juntos:</h3>
+                        <div id="contador">00d 00h 00m 00s</div>
+                    </div>
+
+                    <div class="carta-aberta-texto">
+                        <p>Minha princesa,</p>
+                        <p>Se você chegou até aqui, é porque prestou atenção em cada pequeno detalhe do que vivemos até hoje. Criar este aplicativo foi a forma que encontrei de transformar linhas de código em sentimento puro.</p>
+                        <p>Olhar para trás e lembrar do nosso primeiro beijo, das nossas músicas e das nossas risadas me faz ter a certeza absoluta de que escolher você todos os dias é a melhor decisão da minha vida.</p>
+                        <p>Você é meu porto seguro, minha melhor amiga e o amor da minha vida. Obrigado por ser exatamente quem você é para mim.</p>
+                        <p>Prepara o lenço e dá o play nesse último registro que separei para nós... 👇</p>
+                        
+                        <div class="video-container">
+                            <video id="video-surpresa" src="assets/video_final.mp4" controls poster="assets/foto_final.jpg"></video>
+                        </div>
+                        
+                        <p style="text-align: center; font-weight: 700; color: #ff4d6d; margin-top: 20px;">Eu te amo para sempre! ❤️</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
