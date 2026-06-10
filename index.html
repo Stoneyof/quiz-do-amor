@@ -2,97 +2,136 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Quiz do Amor ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-select=no">
+    <title>Nossa Linha do Tempo do Amor ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <audio id="musica-tema" src="assets/musica.mp3" loop></audio>
-    <button id="btn-musica" onclick="alternarMusica()">🎵 Ouvir Música</button>
+    <button id="btn-musica" class="btn-audio" onclick="alternarMusica()">🎵 Ouvir Música</button>
 
-    <ul class="coracoes">
-        <li>❤️</li><li>❤️</li><li>❤️</li><li>❤️</li><li>❤️</li><li>❤️</li>
-    </ul>
+    <ul class="coracoes"></ul>
 
-    <div class="fotos-retro-fundo">
-        <div class="foto-boomerang foto-esquerda"><img src="assets/foto1.jpg" alt="Momento 1"></div>
-        <div class="foto-boomerang foto-direita"><img src="assets/foto2.jpg" alt="Momento 2"></div>
-    </div>
+    <header class="topo-site">
+        <h1>Feliz Dia dos Namorados, Meu Amor! 🥰</h1>
+        <p>Preparei uma viagem no tempo para lembrar os nossos melhores momentos. Role para baixo e acompanhe a nossa história...</p>
+        
+        <div class="contador-container">
+            <p>Se passaram exatamente:</p>
+            <div id="contador">00d 00h 00m 00s</div>
+            <p>desde o nosso primeiro dia dos namorados juntos.</p>
+        </div>
+        
+        <div class="seta-rolar">👇 Role para navegar na nossa história</div>
+    </header>
 
-    <div class="cena-3d">
-        <div class="container-app" id="app-card">
-            
-            <div id="tela-inicial" class="tela-painel">
-                <div class="app-header">
-                    <span class="status-dot"></span> App do Amor
-                </div>
-                <div class="app-content">
-                    <h1>Bem-vinda! 🥰</h1>
-                    <p>Preparei uma surpresa especial. Será que você lembra tudo sobre a nossa história? Vamos descobrir!</p>
-                    <button class="btn" onclick="iniciarQuiz()">Começar o Jogo 🚀</button>
+    <main class="timeline-container">
+        <div class="linha-vertical"></div>
+
+        <section class="timeline-item esquerda">
+            <div class="timeline-ponto"></div>
+            <div class="timeline-conteudo">
+                <div class="ano-tag">2022</div>
+                <h2>Onde tudo começou... 🧭</h2>
+                <p>Aqui foi onde tudo começou... em meio aos olhares tímidos o nosso amor veio com tudo, fazendo com que eu me apaixonasse por você. Nesse ano foi onde tudo aconteceu, nossa primeira troca de olhar, abraço, beijo e muito mais. Estávamos criando as nossas primeiras memórias e o nosso próprio idioma, feito de sorrisos disfarçados e piadas que só nós dois entendíamos. Ali, no meio de toda aquela timidez, a gente se encontrou de um jeito tão profundo que transformou aquele ano no início do resto das nossas vidas.</p>
+            </div>
+            <div class="timeline-foto">
+                <img src="assets/foto2022.PNG" alt="Nosso 2022">
+            </div>
+        </section>
+
+        <section class="timeline-item direita">
+            <div class="timeline-ponto"></div>
+            <div class="timeline-conteudo">
+                <div class="ano-tag">2023</div>
+                <h2>O Início do Nosso Namoro 💍</h2>
+                <p>O ano em que decidimos oficializar o que o nosso coração já sabia. O momento em que olhei nos seus olhos e soube que não existia outro lugar no mundo onde eu preferisse estar.</p>
+            </div>
+            <div class="timeline-foto">
+                <img src="assets/foto2023.jpeg" alt="Nosso 2023">
+            </div>
+        </section>
+
+        <section class="timeline-item esquerda">
+            <div class="timeline-ponto"></div>
+            <div class="timeline-conteudo">
+                <div class="ano-tag">2024</div>
+                <h2>Nossa cumplicidade crescendo 🤍</h2>
+                <p>As coisas ficaram ainda mais intensas. Vivemos tantas aventuras, rimos de piadas internas e fomos construindo no meio das responsabilidades, de pouquinho em pouquinho, o nosso futuro.</p>
+            </div>
+            <div class="timeline-foto">
+                <img src="assets/foto2024.PNG" alt="Nosso 2024">
+            </div>
+        </section>
+
+        <section class="timeline-item direita">
+            <div class="timeline-ponto"></div>
+            <div class="timeline-conteudo">
+                <div class="ano-tag">2025</div>
+                <h2>Fortes e Inseparáveis 💖</h2>
+                <p>Mais três anos colecionando sorrisos, superando pequenos desafios juntos e descobrindo que o amor não é apenas um sentimento, mas a escolha diária de fazer o outro feliz.</p>
+            </div>
+            <div class="timeline-foto">
+                <img src="assets/foto2025.jpeg" alt="Nosso 2025">
+            </div>
+        </section>
+
+        <section class="secao-envelope-final">
+            <div class="envelope-container-box">
+                <div class="ano-tag hoje">12/06</div>
+                <h2>Você chegou ao presente! 🎉</h2>
+                <p style="margin-bottom: 30px;">Toda a nossa jornada nos trouxe até aqui. Toque no envelope abaixo para abrir sua surpresa final:</p>
+                
+                <div class="envelope-wrapper" onclick="abrirCarta()">
+                    <div class="envelope">
+                        <div class="aba"></div>
+                        <div class="corpo-envelope"></div>
+                        <div class="coracao-selo">❤️</div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div id="tela-quiz" class="tela-painel escondido">
-                <div class="app-header">
-                    <span id="progresso" class="progresso">Pergunta 1 de 5</span>
-                </div>
-                <div class="app-content">
-                    <h2 id="pergunta-texto">Texto da Pergunta?</h2>
-                    <div class="opcoes-container" id="opcoes-container"></div>
+        <section id="carta-surpresa" class="secao-carta-aberta escondido">
+            <div class="carta-papel">
+                <h2>Minha Princesa, 🌹</h2>
+                <p>Se você chegou até aqui, é porque reviveu cada pequeno detalhe do que construímos até hoje. Criar este site foi a forma que encontrei de eternizar nossos momentos de um jeito único.</p>
+                <p>Olhar para trás desde 2022 me faz ter a certeza absoluta de que escolher você todos os dias é a melhor decisão da minha vida. Você é meu porto seguro, minha melhor amiga e o amor da minha vida.</p>
+                <p>Obrigado por ser exatamente quem você é para mim. Para encerrar a nossa jornada com chave de ouro, quero que a gente registre o nosso AGORA bem aqui... 👇</p>
                     
-                    <div id="feedback-container" class="feedback-box escondido">
-                        <p id="feedback-texto"></p>
-                        <img id="feedback-foto" src="" alt="Nossa Foto" class="foto-casal escondido">
-                        <button class="btn" id="btn-proxima" onclick="proximaPergunta()">Avançar ➡️</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tela-envelope" class="tela-painel escondido">
-                <div class="app-header"><span>📩 Você recebeu uma mensagem</span></div>
-                <div class="app-content" style="justify-content: center; align-items: center;">
-                    <p style="margin-bottom: 10px; font-weight: 600; color: #ff4d6d;">Você completou o quiz! 🎉</p>
-                    <p style="font-size: 0.85rem; margin-bottom: 30px;">Toque no envelope para abrir sua surpresa:</p>
+                <div class="area-foto-agora">
+                    <button id="btn-iniciar-camera" class="btn" onclick="ativarCameraEmTempoReal()">Nossa Foto de Hoje ❤️</button>
                     
-                    <div class="envelope-wrapper" onclick="abrirCarta()">
-                        <div class="envelope">
-                            <div class="aba"></div>
-                            <div class="corpo-envelope"></div>
-                            <div class="coracao-selo">❤️</div>
-                        </div>
+                    <div id="camera-interface" class="camera-wrapper escondido">
+                        <video id="webcam" autoplay playsinline></video>
+                        <canvas id="canvas" class="escondido"></canvas>
+                        <button id="btn-capturar" class="btn btn-capturar" onclick="capturarNossaFoto()">Tirar Foto 📸</button>
                     </div>
-                </div>
-            </div>
-
-            <div id="tela-final" class="tela-painel escondido">
-                <div class="app-header"><span>🌹 Minha Carta Para Você</span></div>
-                <div class="app-content scrollable">
                     
-                    <div class="contador-container">
-                        <h3>Nosso Tempo Juntos:</h3>
-                        <div id="contador">00d 00h 00m 00s</div>
-                    </div>
-
-                    <div class="carta-aberta-texto">
-                        <p>Minha princesa,</p>
-                        <p>Se você chegou até aqui, é porque prestou atenção em cada pequeno detalhe do que vivemos até hoje. Criar este aplicativo foi a forma que encontrei de transformar linhas de código em sentimento puro.</p>
-                        <p>Olhar para trás e lembrar do nosso primeiro beijo, das nossas músicas e das nossas risadas me faz ter a certeza absoluta de que escolher você todos os dias é a melhor decisão da minha vida.</p>
-                        <p>Você é meu porto seguro, minha melhor amiga e o amor da minha vida. Obrigado por ser exatamente quem você é para mim.</p>
-                        <p>Prepara o lenço e dá o play nesse último registro que separei para nós... 👇</p>
-                        
-                        <div class="video-container">
-                            <video id="video-surpresa" src="assets/video_final.mp4" controls poster="assets/foto_final.jpg"></video>
-                        </div>
-                        
-                        <p style="text-align: center; font-weight: 700; color: #ff4d6d; margin-top: 20px;">Eu te amo para sempre! ❤️</p>
+                    <div id="foto-final-container" class="foto-agora-container escondido">
+                        <img id="foto-capturada" src="" alt="Nossa Foto de Hoje">
+                        <p class="legenda-foto-agora">Eu te amo muito! ❤️ | 12 de Junho</p>
                     </div>
                 </div>
+                
+                <h3 style="text-align: center; color: #ff4d6d; margin-top: 30px;">Eu te amo para sempre! ❤️</h3>
             </div>
+        </section>
 
+    </main>
+
+    <div id="zoom-modal" class="zoom-modal escondido" onclick="fecharZoom()">
+        <span class="zoom-fechar">&times;</span>
+        <div class="zoom-conteudo-wrapper" onclick="event.stopPropagation()">
+            <img id="zoom-imagem" src="" alt="Zoom Imagem" class="escondido">
+            <div id="zoom-texto" class="zoom-texto-box escondido"></div>
         </div>
     </div>
+
+    <footer class="rodape">
+        <p>Feito com amor por Você para o Amor da Sua Vida. | 12 de Junho</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
