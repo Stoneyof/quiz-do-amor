@@ -3,11 +3,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 
 body {
-    /* Troca o gradiente rosa pela sua foto e adiciona uma camada leve sobre ela */
-    background: linear-gradient(rgba(255, 240, 243, 0.85), rgba(255, 204, 213, 0.85)), url('assets/fundo.jpg');
+    /* Imagem de fundo personalizada com uma película rosa suave por cima */
+    background: linear-gradient(rgba(255, 240, 243, 0.88), rgba(255, 204, 213, 0.88)), url('assets/fundo.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Mantém a foto fixa ao rolar */
+    background-attachment: scroll; /* Efeito paralaxe (a foto fica fixa ao rolar) */
     min-height: 100vh;
     color: #333;
     overflow-x: hidden;
@@ -16,8 +16,8 @@ body {
 
 /* --- TOPO E INTRODUÇÃO --- */
 .topo-site { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30px; position: relative; z-index: 10; }
-.topo-site h1 { color: #ff4d6d; font-size: 2.5rem; margin-bottom: 15px; }
-.topo-site p { color: #666; max-width: 600px; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; }
+.topo-site h1 { color: #ff4d6d; font-size: 2.5rem; margin-bottom: 15px; text-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.topo-site p { color: #555; max-width: 600px; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; font-weight: 600; }
 
 .contador-container { background: white; padding: 20px 40px; border-radius: 24px; box-shadow: 0 15px 35px rgba(255, 77, 109, 0.15); border: 2px dashed #ff4d6d; }
 #contador { font-size: 1.8rem; font-weight: 700; color: #ff4d6d; margin: 10px 0; }
