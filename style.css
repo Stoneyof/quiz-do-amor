@@ -3,11 +3,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 
 body {
-    /* Imagem de fundo personalizada com uma película rosa suave por cima */
+    /* Ajustado o caminho de forma limpa e direta */
     background: linear-gradient(rgba(255, 240, 243, 0.88), rgba(255, 204, 213, 0.88)), url('assets/fundo.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: scroll; /* Efeito paralaxe (a foto fica fixa ao rolar) */
+    background-attachment: scroll;
     min-height: 100vh;
     color: #333;
     overflow-x: hidden;
