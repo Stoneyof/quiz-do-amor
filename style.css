@@ -3,7 +3,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 
 body {
-    /* Ajustado o caminho de forma limpa e direta */
+    /* CORRIGIDO: linear-gradient com 'e', buscando fundo.jpeg e configurado para rolar junto */
     background: linear-gradient(rgba(255, 240, 243, 0.88), rgba(255, 204, 213, 0.88)), url('assets/fundo.jpeg');
     background-size: cover;
     background-position: center;

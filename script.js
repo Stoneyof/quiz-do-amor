@@ -49,7 +49,7 @@ function abrirCarta() {
 
 // --- CONTROLE DA CÂMERA EM TEMPO REAL ---
 
-function activarCameraEmTempoReal() {
+function ativarCameraEmTempoReal() {
     btnIniciarCamera.classList.add('escondido');
     cameraInterface.classList.remove('escondido');
 
