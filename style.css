@@ -3,7 +3,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 
 body {
-    background: radial-gradient(circle, #fff0f3 0%, #ffccd5 100%);
+    /* Troca o gradiente rosa pela sua foto e adiciona uma camada leve sobre ela */
+    background: linear-gradient(rgba(255, 240, 243, 0.85), rgba(255, 204, 213, 0.85)), url('assets/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantém a foto fixa ao rolar */
     min-height: 100vh;
     color: #333;
     overflow-x: hidden;
